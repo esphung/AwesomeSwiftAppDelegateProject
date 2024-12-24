@@ -3,11 +3,13 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "lint": "eslint .",
-    "start": "react-native start",
-    "test": "jest"
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios",
+    "lint": "npx eslint \"**/*.{ts,tsx}\"",
+    "start": "npx react-native start",
+    "test": "jest",
+    "typecheck": "npx tsc",
+    "precommit": "yarn lint && yarn typecheck"
   },
   "dependencies": {
     "react": "18.3.1",
@@ -19,11 +21,13 @@
     "@babel/runtime": "^7.25.0",
     "@react-native-community/cli": "15.0.1",
     "@react-native-community/cli-platform-android": "15.0.1",
+    "@react-native-community/cli-platform-apple": "15.0.1",
     "@react-native-community/cli-platform-ios": "15.0.1",
-    "@react-native/babel-preset": "0.76.5",
-    "@react-native/eslint-config": "0.76.5",
-    "@react-native/metro-config": "0.76.5",
-    "@react-native/typescript-config": "0.76.5",
+    "@react-native/babel-preset": "0.77.0-rc.0",
+    "@react-native/eslint-config": "0.77.0-rc.0",
+    "@react-native/metro-config": "0.77.0-rc.0",
+    "@react-native/typescript-config": "0.77.0-rc.0",
+    "@types/jest": "^29.5.13",
     "@types/react": "^18.2.6",
     "@types/react-test-renderer": "^18.0.0",
     "babel-jest": "^29.6.3",
@@ -35,5 +39,6 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
